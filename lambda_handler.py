@@ -12,10 +12,12 @@ from utils import decode_base64_to_image, load_label_mapping, map_class_to_label
 
 model = torch.jit.load("intel-model.script.pt")
 model.eval()
-predict_transforms = T.Compose([
-    T.Resize((224, 224)),
-    T.ToTensor(),
-    T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
+predict_transforms = T.Compose(
+    [
+        T.Resize((224, 224)),
+        T.ToTensor(),
+        T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    ]
 )
 topk = 5
 

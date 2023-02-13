@@ -171,7 +171,7 @@
             "Type": "AWS::Lambda::Function",
             "Properties": {
               "Code": {
-                "ImageUri": "991979990579.dkr.ecr.ap-south-1.amazonaws.com/intel-serverless@sha256:38bba2a7c15655807184845e474a5ca88346174833a68e521ad40ebfb7768221"
+                "ImageUri": "991979990579.dkr.ecr.ap-south-1.amazonaws.com/intel-serverless@sha256:0941ff15983558b0251dfbebc78d3200d86c704fb098c04306d7b428be4ae1e6"
               },
               "PackageType": "Image",
               "FunctionName": "serverless-intel-dev-intel",
@@ -188,14 +188,14 @@
               "IntelLogGroup"
             ]
           },
-          "IntelLambdaVersionP5FaCz8c0TZLU5sTSRfAP5xdRWRCrmaUF6aVFWJi5o": {
+          "IntelLambdaVersiongOfmYh0dlxaTcvOINslP9DLxUUktoKPVx46Ijs9fZlI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "IntelLambdaFunction"
               },
-              "CodeSha256": "38bba2a7c15655807184845e474a5ca88346174833a68e521ad40ebfb7768221"
+              "CodeSha256": "0941ff15983558b0251dfbebc78d3200d86c704fb098c04306d7b428be4ae1e6"
             }
           },
           "ApiGatewayRestApi": {
@@ -316,7 +316,7 @@
               "IntelLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1676319715235": {
+          "ApiGatewayDeployment1676320850078": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -379,7 +379,7 @@
           "IntelLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "IntelLambdaVersionP5FaCz8c0TZLU5sTSRfAP5xdRWRCrmaUF6aVFWJi5o"
+              "Ref": "IntelLambdaVersiongOfmYh0dlxaTcvOINslP9DLxUUktoKPVx46Ijs9fZlI"
             },
             "Export": {
               "Name": "sls-serverless-intel-dev-IntelLambdaFunctionQualifiedArn"
@@ -532,7 +532,7 @@
         "memory": 10240,
         "timeout": 300,
         "vpc": {},
-        "versionLogicalId": "IntelLambdaVersionP5FaCz8c0TZLU5sTSRfAP5xdRWRCrmaUF6aVFWJi5o"
+        "versionLogicalId": "IntelLambdaVersiongOfmYh0dlxaTcvOINslP9DLxUUktoKPVx46Ijs9fZlI"
       }
     },
     "configValidationMode": "warn",
@@ -550,7 +550,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-intel/dev/1676319716753-2023-02-13T20:21:56.753Z",
+    "artifactDirectoryName": "serverless/serverless-intel/dev/1676320852787-2023-02-13T20:40:52.787Z",
     "artifact": ""
   }
 }
