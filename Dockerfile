@@ -1,22 +1,9 @@
-FROM python:3.9.13-slim
+FROM public.ecr.aws/lambda/python:3.8
 
-# Basic setup
-RUN apt update
-RUN apt install -y \
-    build-essential \
-    git \
-    curl \
-    ca-certificates \
-    wget \
-    && rm -rf /var/lib/apt/lists
+COPY ./requirements.txt ${LAMBDA_TASK_ROOT}/
+ 
+RUN pip3 install -r requirements.txt --target ${LAMBDA_TASK_ROOT}
 
-# Set working directory
-WORKDIR /workspace/project
+COPY ./ ${LAMBDA_TASK_ROOT}/
 
-# Install requirements
-COPY requirements.txt ./
-
-RUN pip install --no-cache-dir -r requirements.txt \
-    && rm requirements.txt
-
-# COPY . .
+CMD ["lambda_handler.handle_request"]
