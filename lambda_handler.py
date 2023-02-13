@@ -10,14 +10,12 @@ from typing import Dict
 
 from utils import decode_base64_to_image, load_label_mapping, map_class_to_label
 
-model = torch.jit.load("mnist-model.script.pt")
+model = torch.jit.load("intel-model.script.pt")
 model.eval()
-predict_transforms = T.Compose(
-    [
-        T.Resize((28, 28)),
-        T.ToTensor(),
-        T.Normalize((0.1307,), (0.3081,)),
-    ]
+predict_transforms = T.Compose([
+    T.Resize((224, 224)),
+    T.ToTensor(),
+    T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 )
 topk = 5
 

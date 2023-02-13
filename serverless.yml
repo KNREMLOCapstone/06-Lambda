@@ -1,4 +1,4 @@
-service: serverless-mnist
+service: serverless-intel
  
 provider:
   name: aws #cloud provider
@@ -7,8 +7,8 @@ provider:
   timeout: 300 
  
 functions:
-  mnist:
-    image: 006547668672.dkr.ecr.ap-south-1.amazonaws.com/mnist-serverless:latest 
+  intel:
+    image: 991979990579.dkr.ecr.ap-south-1.amazonaws.com/intel-serverless:latest  
     events:
       - http:
           path: inference 
